@@ -3,29 +3,83 @@ package it2e_javeluna_arental;
 import java.util.*;
 
 public class IT2E_JAVELUNA_ARENTAL {
+    
     public static void main(String[] args) {
-       int ch, act;
-         Scanner n = new Scanner (System.in);
-//        System.out.println("[1] Host");
-//        System.out.println("[2] Guest");
-//        System.out.println("[3] Transaction History");
-//        System.out.print("Choose an entity: ");
-//        ch=n.nextInt();
-         System.out.println("|  [1] Create  \n|  [2] Remove \n|  [3] Update \n|  [4] Delete \n|  [5] Exit \n|");
-                System.out.print(" >> Enter action: ");
-                act=n.nextInt();
-                
-        switch(act){
-            case 1: addhost addh = new addhost();
-                    addh.addhost();
-                break;
-            case 2: addguest addg = new addguest();
-                    addg.addguest();
-                break;
-        }
-            
+        menu();
     }
     
-}
-
+        public static void menu(){
+        Scanner n = new Scanner (System.in);
+         
+        System.out.println("[1] Host");
+        System.out.println("[2] Guest");
+        System.out.println("[3] Exit Program");
+        System.out.print(">> Choose an entity: ");
+        int ch = n.nextInt();
+       
+        addhost addh = new addhost();
+        switch(ch){
+            case 1: host();           
+                break;
+            case 2: guest();
+                break;
+            case 3: 
+        }
+        }
+       public static void host(){
+        addhost addh = new addhost();
+        Scanner n = new Scanner (System.in);
+        System.out.println("[1] Add");
+        System.out.println("[2] View");
+        System.out.println("[3] Edit");
+        System.out.println("[4] Remove");
+        System.out.println("[5] Back");
+        System.out.print(">> Choose an action: ");
+        int act =n.nextInt();
+           switch(act){
+              case 1: addh.addhost();
+                      addh.viewhost();
+                      break;
+              case 2: addh.viewhost();
+                      break;
+              case 3: addh.viewhost();
+                      addh.updatehost();
+                      break;
+              case 4: addh.viewhost();
+                      addh.deletehost();
+                      break;
+              case 5: menu();
+           }
+       }
+       public static void guest(){
+        addguest addg = new addguest();
+        Scanner n = new Scanner (System.in);
+        System.out.println("[1] Add");
+        System.out.println("[2] View");
+        System.out.println("[3] Edit");
+        System.out.println("[4] Remove");
+        System.out.println("[5] Back");
+        System.out.print(">> Choose an action: ");
+        int act =n.nextInt();
+           switch(act){
+              case 1: addg.addguest();
+                      addg.viewguest();
+                      break;
+              case 2: addg.viewguest();
+                      break;
+              case 3: addg.viewguest();
+                      addg.updateguest();
+                      break;
+              case 4: addg.viewguest();
+                      addg.deleteguest();
+                      break;
+              case 5: menu();
+           }
+       }
+     
+    
+    
+    
+    }
+    
 
