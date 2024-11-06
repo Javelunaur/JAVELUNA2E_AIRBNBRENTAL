@@ -6,8 +6,8 @@ public class addguest {
     Scanner n = new Scanner (System.in);
     public void addguest(){
         config conf = new config();
-         System.out.println("Enter Guest ID: ");
-         int gid=n.nextInt();
+//         System.out.println("Enter Guest ID: ");
+//         int gid=n.nextInt();
          System.out.println("First Name: ");
          String fn=n.next();
          System.out.print("Surname: ");
@@ -19,7 +19,7 @@ public class addguest {
          
          String sql = "INSERT INTO guest (GuestID, First Name, Surname, Email, Phone) VALUES (?, ?, ?, ?, ?)";
          
-         conf.addRecord(sql, gid, fn, sn, email, phone); 
+         conf.addRecord(sql, fn, sn, email, phone); 
 }
     public void viewguest() {
         config conf = new config();
